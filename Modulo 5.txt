@@ -1,0 +1,62 @@
+10.0.0.0 é privado - vpc
+
+
+o que vai falar com a internet é a subrede, se vc quiser
+subnet 10.0.1.0/16
+ou 10.0.2.0/16
+
+internet gateway vc pode colocar pra ter internet 
+na aws vc pode ir ate /28 ja que eles pegam 5 ips rservados para eles
+
+dns - é um dicionario que de um lado tem o endereço ip e de outro lado tem o nome
+transforma ip em nome
+
+ipv4 ele é distribuido por uma empresa chamado IANA
+na aws vc cria uma instancia e ja tem o ip, na aws eles nao cobram pelo ip, apartir do momento que vc desligar ou reiniciar a instancia, o ip troca
+
+vc tem a chances de alugar um ip
+elastic ip, coloca ele na placa de rede da sua maquina 
+ENI elastic network interface 
+oq recebe o endereço de ip é a placa de rede 
+
+toda vpc elas conseguem rotear o trafeco que passa por la 
+tabelas de rotas contem um conjunto de regras 
+CIDR é o bloco de rotas da minha vpc 
+nao é possivel excluir a rota local
+
+nat gateway - ele esconde o ip e o roteador substitui outro 
+
+vpc perring  é o emparelhamento - ele liga duas vpcs, ele n pode ligar mais de 2
+
+aws transit gateway - ele liga varias vpc, diferente do perring que liga apenas 2 
+
+aws vpn - cria uma conexao criptografada (Um tunel)
+
+vpc endpoints - conecta a gente com os serviços da aws, dois tipos de endpoint: 
+interface -conecta a gente com qualquer serviço da aws
+gateway - Apenas amazon s3 e dynamoDB
+
+grupo de segurança nao coloca regras na saida
+ACLs atuam apenas na sub-rede
+regras na entradas e saidas
+
+stateful ja vem com apenas com algumas regras - grupo de segurnça, na acl tem q configurar
+
+
+
+
+Amazon Route 53 - serviço de dns pra registrar dominios - altamente disponivel e escalavel
+roteamento direcionando pros pacotes pro 
+
+roteamento de geoproximidade - ele se torna mais rapido 
+failover- caso nao fucione o site, ele vai pra outro ip 
+
+
+amazon cloudfront - ele pega um serviço e armazena o cache perto de vc
+CloudFront acelera a distribuição do seu conteúdo encaminhando cada solicitação de usuário por meio da rede de estrutura da AWS para o local da borda capaz de veicular melhor seu conteúdo
+utiliza os pontos de presença é onde vai ficar armazenado esses conteudos 
+é chamado isso de rede de entrega de conteudo (CDN) 
+
+NAO PRECISA DE UMA ZONA PRA TER PONTO DE PRESENÇA
+
+MQ serviço gerenciado de agente de mensagens 
